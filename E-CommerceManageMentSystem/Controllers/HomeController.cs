@@ -18,6 +18,7 @@ namespace E_CommerceManageMentSystem.Controllers
             _logger = logger;
         }
 
+
         public IActionResult Index()
         {
             return View();
