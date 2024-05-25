@@ -1,1 +1,1 @@
-# E-CommerceManageMentSystem
+# E-CommerceManagementSystem
