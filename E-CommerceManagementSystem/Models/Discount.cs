@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace E_CommerceManageMentSystem.Models
 {
     public class Discount
     {
+        [Key]
         public int DiscountID { get; set; }
         public int ProductID { get; set; }
         public decimal DiscountPercentage { get; set; }

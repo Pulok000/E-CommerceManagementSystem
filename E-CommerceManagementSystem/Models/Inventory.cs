@@ -1,7 +1,10 @@
-﻿namespace E_CommerceManageMentSystem.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace E_CommerceManageMentSystem.Models
 {
     public class Inventory
     {
+        [Key]
         public int InventoryID { get; set; }
         public int VariantID { get; set; }
         public int StockLevel { get; set; }

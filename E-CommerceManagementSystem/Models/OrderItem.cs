@@ -1,8 +1,10 @@
-﻿namespace E_CommerceManageMentSystem.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace E_CommerceManageMentSystem.Models
 {
     public class OrderItem
     {
-
+        [Key]
         public int OrderItemID { get; set; }
         public int OrderID { get; set; }
         public int VariantID { get; set; }

@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 
 namespace E_CommerceManageMentSystem.Models
 {
     public class Customer
     {
+        [Key]
         public int CustomerID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

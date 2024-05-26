@@ -1,7 +1,10 @@
-﻿namespace E_CommerceManageMentSystem.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace E_CommerceManageMentSystem.Models
 {
     public class CartItem
     {
+        [Key]
         public int CartItemID { get; set; }
         public int CartID { get; set; }
         public int VariantID { get; set; }

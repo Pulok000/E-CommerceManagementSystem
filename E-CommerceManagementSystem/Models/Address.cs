@@ -1,7 +1,10 @@
-﻿namespace E_CommerceManageMentSystem.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace E_CommerceManageMentSystem.Models
 {
     public class Address
     {
+        [Key]
         public int AddressID { get; set; }
         public int CustomerID { get; set; }
         public string AddressLine1 { get; set; }
