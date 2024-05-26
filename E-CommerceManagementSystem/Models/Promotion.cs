@@ -8,9 +8,16 @@ namespace E_CommerceManageMentSystem.Models
     {
         [Key]
         public int PromotionID { get; set; }
+
+        [Required]
         public string Code { get; set; }
-        public decimal? DiscountAmount { get; set; }
+
+        [Required]
+        public decimal DiscountAmount { get; set; }
+
+        [Required]
         public DateTime ExpirationDate { get; set; }
-        public ICollection<Product> Products { get; set; }
+
+        public ICollection<ProductPromotion> ProductPromotions { get; set; }
     }
 }

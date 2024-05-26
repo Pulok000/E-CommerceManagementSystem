@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace E_CommerceManageMentSystem.Models
 {
@@ -6,9 +7,12 @@ namespace E_CommerceManageMentSystem.Models
     {
         [Key]
         public int InventoryID { get; set; }
+
         public int VariantID { get; set; }
-        public int StockLevel { get; set; }
-        public int ReorderLevel { get; set; }
         public Variant Variant { get; set; }
+
+        public int StockLevel { get; set; }
+
+        public int ReorderLevel { get; set; }
     }
 }

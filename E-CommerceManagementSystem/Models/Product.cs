@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using E_CommerceManageMentSystem.Data.Enums;
 
 namespace E_CommerceManageMentSystem.Models
 {
@@ -7,13 +8,21 @@ namespace E_CommerceManageMentSystem.Models
     {
         [Key]
         public int ProductID { get; set; }
+
+        [Required]
         public string Name { get; set; }
+
         public string Description { get; set; }
+
+        [Required]
         public decimal Price { get; set; }
-        public int CategoryID { get; set; }
+
+        [Required]
         public Category Category { get; set; }
+
         public ICollection<Variant> Variants { get; set; }
         public ICollection<Discount> Discounts { get; set; }
+        public ICollection<ProductPromotion> ProductPromotions { get; set; }
 
     }
 }
