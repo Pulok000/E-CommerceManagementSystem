@@ -20,6 +20,8 @@ namespace E_CommerceManageMentSystem.Models
         [Required]
         public Category Category { get; set; }
 
+        public string ProductPictureURL { get; set; }
+
         public ICollection<Variant> Variants { get; set; }
         public ICollection<Discount> Discounts { get; set; }
         public ICollection<ProductPromotion> ProductPromotions { get; set; }

@@ -9,6 +9,7 @@ namespace E_CommerceManageMentSystem.Data.Enums
         Electronics=1,
         Apparel,
         HomeGoods,
+        Paintings,
         Toys,
         Books
     }

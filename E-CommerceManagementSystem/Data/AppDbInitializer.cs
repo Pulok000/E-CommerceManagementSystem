@@ -19,21 +19,33 @@ namespace E_CommerceManageMentSystem.Data
                 context.Database.EnsureCreated();
 
                 //Products
-                if (!context.Products.Any())
+                if (false)
                 {
                     context.Products.AddRange(new List<Product>()
                     {
-                new Product()
-                {
-                    Name = "Product 1",
-                   
-                    Description = "This is the description of the first Product",
-                    Price = 10.00m,
-                    Category = Category.Toys,
-                    Variants = new List<Variant>(), // Assuming you have a Variant class
-                    Discounts = new List<Discount>(), // Assuming you have a Discount class
-                    ProductPromotions = new List<ProductPromotion>() // Assuming you have a ProductPromotion class
-                },
+                        new Product()
+                        {
+                            Name = "H.MATISSE",
+                            Description = "Its a painting",
+                            Price = 3000,
+                            Category = Category.Paintings,
+
+                            ProductPictureURL="img/product/H_Matisse.jpg",
+                            Variants = new List<Variant>(),
+                            Discounts = new List<Discount>(),
+                            ProductPromotions = new List<ProductPromotion>()
+                        },
+                                                new Product()
+                        {
+                            Name = "Product 2 Meat",
+                            Description = "This is the description of the first Product",
+                            Price = 525,
+                            Category = Category.HomeGoods,
+                            ProductPictureURL="img/product/product-1.jpg",
+                            Variants = new List<Variant>(),
+                            Discounts = new List<Discount>(),
+                            ProductPromotions = new List<ProductPromotion>()
+                        },
                     });
                     context.SaveChanges();
                 }
