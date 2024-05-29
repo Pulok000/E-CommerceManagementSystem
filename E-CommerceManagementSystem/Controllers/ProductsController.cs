@@ -1,5 +1,6 @@
 ﻿using E_CommerceManageMentSystem.Data;
 using E_CommerceManageMentSystem.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace E_CommerceManageMentSystem.Controllers
 {
+    [Authorize]
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -17,6 +19,7 @@ namespace E_CommerceManageMentSystem.Controllers
         }
 
         // GET: Products
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Products.ToListAsync());

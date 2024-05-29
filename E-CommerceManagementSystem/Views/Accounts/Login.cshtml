@@ -1,0 +1,77 @@
+﻿@model E_CommerceManageMentSystem.Data.ViewModels.LoginViewModel
+<body style="background-color: #f8f9fa;">
+    <div class="container mt-5">
+        <div class="card" style="max-width: 500px; margin: 0 auto;">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" id="registrationTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="customer-tab" data-toggle="tab" href="#customer" role="tab" aria-controls="customer" aria-selected="true" style="cursor: pointer;">Login as Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="admin-tab" data-toggle="tab" href="#admin" role="tab" aria-controls="admin" aria-selected="false" style="cursor: pointer;">Login as Admin</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content" id="registrationTabsContent">
+                    <div class="tab-pane fade show active" id="customer" role="tabpanel" aria-labelledby="customer-tab">
+                        <form id="customerForm" method="post" asp-action="Login" asp-controller="Accounts">
+
+                            @* Client side validation message *@
+                            @* <div asp-validation-summary="All" class="text-danger"></div> *@
+
+
+                            <div class="form-group">
+                                <label asp-for="Email">Email</label>
+                                <input type="email" asp-for="Email" class="form-control" id="customerEmail" required style="width: 100%;">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Password">Password</label>
+                                <input type="password" asp-for="Password" class="form-control" id="customerPassword" required style="width: 100%;">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group form-check">
+                                <input type="checkbox" asp-for="RememberMe" class="form-check-input">
+                                <label class="form-check-label" asp-for="RememberMe">Remember Me</label>
+                            </div>
+
+                            <input type="hidden" asp-for="RoleName" value="Customer" />
+                            <button type="submit" class="btn btn-success" style="width: 100%;">Login</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="admin" role="tabpanel" aria-labelledby="admin-tab">
+                        <form id="adminForm" method="post" asp-action="Login" asp-controller="Accounts">
+                            @* Client side validation message *@
+                            @* <div asp-validation-summary="All" class="text-danger"></div> *@
+                            <div class="form-group">
+                                <label asp-for="Email">Email</label>
+                                <input type="email" class="form-control" asp-for="Email" style="width: 100%;">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Password">Password</label>
+                                <input type="password" class="form-control" asp-for="Password" style="width: 100%;">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group form-check">
+                                <input type="checkbox" asp-for="RememberMe" class="form-check-input">
+                                <label class="form-check-label" asp-for="RememberMe">Remember Me</label>
+                            </div>
+                            <input type="hidden" asp-for="RoleName" value="Admin" />
+                            <button type="submit" class="btn btn-success" style="width: 100%;">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

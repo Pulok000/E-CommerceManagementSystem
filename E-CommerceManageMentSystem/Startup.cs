@@ -50,7 +50,7 @@ namespace E_CommerceManageMentSystem
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
